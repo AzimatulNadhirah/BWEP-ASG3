@@ -123,84 +123,41 @@
 	<script type="text/javascript">
 
 		function preview(){
-
-			var greet = document.getElementById("greet");
-			var name = document.getElementById("name");
-			var date = document.getElementById("date");
-			var venue = document.getElementById("venue");
-			var time = document.getElementById("time");
-			var close = document.getElementById("close");
-			var sender = document.getElementById("sender");
-
-			var greet1 = document.getElementById("greet1");
-			var name1 = document.getElementById("name1");
-			var date1 = document.getElementById("date1");
-			var venue1 = document.getElementById("venue1");
-			var time1 = document.getElementById("time1");
-			var close1 = document.getElementById("close1");
-			var sender1 = document.getElementById("sender1");
-
-			localStorage.setItem("greet", greet.value);
-			localStorage.setItem("name", name.value);
-			localStorage.setItem("date", date.value);
-			localStorage.setItem("venue", venue.value);
-			localStorage.setItem("time", time.value);
-			localStorage.setItem("close", close.value);
-			localStorage.setItem("sender", sender.value);
-
-			greet1.innerHTML = localStorage.getItem("greet");
-			name1.innerHTML = localStorage.getItem("name");
-			date1.innerHTML = "Date: " + localStorage.getItem("date");
-			venue1.innerHTML = "Venue: " + localStorage.getItem("venue");
-			time1.innerHTML = "Time: " + localStorage.getItem("time");
-			close1.innerHTML = localStorage.getItem("close");
-			sender1.innerHTML = "From: " + localStorage.getItem("sender");
+			document.getElementById("greet1").innerHTML = document.getElementById("greet").value;
+			document.getElementById("name1").innerHTML = document.getElementById("name").value;
+			document.getElementById("date1").innerHTML = "Date: " + document.getElementById("date").value;
+			document.getElementById("venue1").innerHTML = "Venue: " + document.getElementById("venue").value;
+			document.getElementById("time1").innerHTML = "Time: " + document.getElementById("time").value;
+			document.getElementById("close1").innerHTML = document.getElementById("close").value;
+			document.getElementById("sender1").innerHTML = "From: " + document.getElementById("sender").value;
 		}
 		function save(){
-			var greet1 = document.getElementById("greet1");
-			var name1 = document.getElementById("name1");
-			var date1 = document.getElementById("date1");
-			var venue1 = document.getElementById("venue1");
-			var time1 = document.getElementById("time1");
-			var close1 = document.getElementById("close1");
-			var sender1 = document.getElementById("sender1");
+			let a = document.getElementById("greet").value;
+			let b = document.getElementById("name").value;
+			let c = document.getElementById("date").value;
+			let d = document.getElementById("venue").value;
+			let e = document.getElementById("time").value;
+			let f = document.getElementById("close").value;
+			let g = document.getElementById("sender").value;
 
-			localStorage.setItem("greet1", greet1.value);
-			localStorage.setItem("name1", name1.value);
-			localStorage.setItem("date1", date1.value);
-			localStorage.setItem("venue1", venue1.value);
-			localStorage.setItem("time1", time1.value);
-			localStorage.setItem("close1", close1.value);
-			localStorage.setItem("sender1", sender1.value);
+			localStorage.setItem("greet", a);
+			localStorage.setItem("name", b);
+			localStorage.setItem("date", c);
+			localStorage.setItem("venue", d);
+			localStorage.setItem("time", e);
+			localStorage.setItem("close", f);
+			localStorage.setItem("sender", g);
 		}
 		function load(){
-			var greet = document.getElementById("greet");
-			var name = document.getElementById("name");
-			var date = document.getElementById("date");
-			var venue = document.getElementById("venue");
-			var time = document.getElementById("time");
-			var close = document.getElementById("close");
-			var sender = document.getElementById("sender");
-
-			greet.innerHTML = localStorage.getItem("greet1");
-			name.innerHTML = localStorage.getItem("name1");
-			date.innerHTML = localStorage.getItem("date1");
-			venue.innerHTML = localStorage.getItem("venue1");
-			time.innerHTML = localStorage.getItem("time1");
-			close.innerHTML = localStorage.getItem("close1");
-			sender.innerHTML = localStorage.getItem("sender1");
+			document.getElementById("greet").value = localStorage.getItem("greet");
+			document.getElementById("name").value = localStorage.getItem("name");
+			document.getElementById("date").value = localStorage.getItem("date");
+			document.getElementById("venue").value = localStorage.getItem("venue");
+			document.getElementById("time").value = localStorage.getItem("time");
+			document.getElementById("close").value = localStorage.getItem("close");
+			document.getElementById("sender").value = localStorage.getItem("sender");
 		}
 		function clearPreview(){
-			// save all as empty string to local storage
-			localStorage.setItem("greet", "");
-			localStorage.setItem("name", "");
-			localStorage.setItem("date", "");
-			localStorage.setItem("venue", "");
-			localStorage.setItem("time", "");
-			localStorage.setItem("close", "");
-			localStorage.setItem("sender", "");
-
-			// replace empty the input value into an empty string
 			document.getElementById("greet").value = "";
 			document.getElementById("name").value = "";
 			document.getElementById("date").value = "";
@@ -209,17 +166,13 @@
 			document.getElementById("close").value = "";
 			document.getElementById("sender").value = "";
 
-			// lead empty string into the preview from local storage
-			greet1.innerHTML = localStorage.getItem("greet");
-			name1.innerHTML = localStorage.getItem("name");
-			date1.innerHTML = localStorage.getItem("date");
-			venue1.innerHTML = localStorage.getItem("venue");
-			time1.innerHTML = localStorage.getItem("time");
-			close1.innerHTML = localStorage.getItem("close");
-			sender1.innerHTML = localStorage.getItem("sender");
-		}
-		function red(){
-			document.getElementById("content").style.backgroundColor = red;
+			document.getElementById("greet1").innerHTML = "";
+			document.getElementById("name1").innerHTML = "";
+			document.getElementById("date1").innerHTML = "";
+			document.getElementById("venue1").innerHTML = "";
+			document.getElementById("time1").innerHTML = "";
+			document.getElementById("close1").innerHTML = "";
+			document.getElementById("sender1").innerHTML = "";
 		}
 		function font(value){
 
@@ -283,7 +236,7 @@
 
 			<br><button onclick="preview()" style="width: 48%" class="btn">Preview</button>
 			<button onclick="clearPreview()" style="width: 48%" class="btn">Clear</button><br>
-			<br><button onload="load()" style="width: 48%" class="btn">Load Favorite</button>
+			<br><button onclick="load()" style="width: 48%" class="btn">Load Favorite</button>
 			<button onclick="save()" style="width: 48%" class="btn">Mark as Favorite</button><br>
 
 			<br><label><u>Choose Font Style:</u></label><br>

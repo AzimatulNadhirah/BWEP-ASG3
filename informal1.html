@@ -121,78 +121,45 @@
 	<script type="text/javascript">
 
 		function preview(){
-
-			var name = document.getElementById("name");
-			var date = document.getElementById("date");
-			var venue = document.getElementById("venue");
-			var time = document.getElementById("time");
-			var sender = document.getElementById("sender");
-
-			var name1 = document.getElementById("name1");
-			var date1 = document.getElementById("date1");
-			var venue1 = document.getElementById("venue1");
-			var time1 = document.getElementById("time1");
-			var sender1 = document.getElementById("sender1");
-
-			localStorage.setItem("name", name.value);
-			localStorage.setItem("date", date.value);
-			localStorage.setItem("venue", venue.value);
-			localStorage.setItem("time", time.value);
-			localStorage.setItem("sender", sender.value);
-
-			name1.innerHTML = localStorage.getItem("name");
-			date1.innerHTML = "Date: " + localStorage.getItem("date");
-			venue1.innerHTML = "Venue: " + localStorage.getItem("venue");
-			time1.innerHTML = "Time: " + localStorage.getItem("time");
-			sender1.innerHTML = "From: " + localStorage.getItem("sender");
+			document.getElementById("name1").innerHTML = document.getElementById("name").value;
+			document.getElementById("date1").innerHTML = "Date: " + document.getElementById("date").value;
+			document.getElementById("venue1").innerHTML = "Venue: " + document.getElementById("venue").value;
+			document.getElementById("time1").innerHTML = "Time: " + document.getElementById("time").value;
+					document.getElementById("sender1").innerHTML = "From: " + document.getElementById("sender").value;
 		}
 		function save(){
-			var name1 = document.getElementById("name1");
-			var date1 = document.getElementById("date1");
-			var venue1 = document.getElementById("venue1");
-			var time1 = document.getElementById("time1");
-			var sender1 = document.getElementById("sender1");
+			let b = document.getElementById("name").value;
+			let c = document.getElementById("date").value;
+			let d = document.getElementById("venue").value;
+			let e = document.getElementById("time").value;
+			let g = document.getElementById("sender").value;
 
-			localStorage.setItem("name1", name1.value);
-			localStorage.setItem("date1", date1.value);
-			localStorage.setItem("venue1", venue1.value);
-			localStorage.setItem("time1", time1.value);
-			localStorage.setItem("sender1", sender1.value);
+
+			localStorage.setItem("name", b);
+			localStorage.setItem("date", c);
+			localStorage.setItem("venue", d);
+			localStorage.setItem("time", e);
+			localStorage.setItem("sender", g);
 		}
 		function load(){
-			var name = document.getElementById("name");
-			var date = document.getElementById("date");
-			var venue = document.getElementById("venue");
-			var time = document.getElementById("time");
-			var sender = document.getElementById("sender");
-
-			name.innerHTML = localStorage.getItem("name1");
-			date.innerHTML = localStorage.getItem("date1");
-			venue.innerHTML = localStorage.getItem("venue1");
-			time.innerHTML = localStorage.getItem("time1");
-			sender.innerHTML = localStorage.getItem("sender1");
+			document.getElementById("name").value = localStorage.getItem("name");
+			document.getElementById("date").value = localStorage.getItem("date");
+			document.getElementById("venue").value = localStorage.getItem("venue");
+			document.getElementById("time").value = localStorage.getItem("time");
+			document.getElementById("sender").value = localStorage.getItem("sender");
 		}
 		function clearPreview(){
-			// save all as empty string to local storage
-			localStorage.setItem("name", "");
-			localStorage.setItem("date", "");
-			localStorage.setItem("venue", "");
-			localStorage.setItem("time", "");
-			localStorage.setItem("sender", "");
-
-			// replace empty the input value into an empty string
 			document.getElementById("name").value = "";
 			document.getElementById("date").value = "";
 			document.getElementById("venue").value = "";
 			document.getElementById("time").value = "";
 			document.getElementById("sender").value = "";
 
-			// lead empty string into the preview from local storage
-			name1.innerHTML = localStorage.getItem("name");
-			date1.innerHTML = localStorage.getItem("date");
-			venue1.innerHTML = localStorage.getItem("venue");
-			time1.innerHTML = localStorage.getItem("time");
-			sender1.innerHTML = localStorage.getItem("sender");
+			document.getElementById("name1").innerHTML = "";
+			document.getElementById("date1").innerHTML = "";
+			document.getElementById("venue1").innerHTML = "";
+			document.getElementById("time1").innerHTML = "";
+			document.getElementById("sender1").innerHTML = "";
 		}
 		function bgimg(value){
 		var content = document.getElementById("content");

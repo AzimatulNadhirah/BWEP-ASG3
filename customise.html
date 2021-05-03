@@ -144,95 +144,55 @@ function stored(){
 	document.getElementById("Thank You").innerHTML = localStorage.getItem("tq");
 	document.getElementById("Have a Good Day!").innerHTML = localStorage.getItem("hgd");
 }	
+
+
 function preview(){
-
-			var title = document.getElementById("title");
-			var event = document.getElementById("event");
-			var name = document.getElementById("name");
-			var date = document.getElementById("date");
-			var venue = document.getElementById("venue");
-			var time = document.getElementById("time");
-			var from = document.getElementById("from");
-			var close = document.getElementById("close");
-
-			var title1 = document.getElementById("title1");
-			var event1 = document.getElementById("event1");
-			var name1 = document.getElementById("name1");
-			var date1 = document.getElementById("date1");
-			var venue1 = document.getElementById("venue1");
-			var time1 = document.getElementById("time1");
-			var from1 = document.getElementById("from1");
-			var close1 = document.getElementById("close1");
-
-			localStorage.setItem("title", title.value);
-			localStorage.setItem("event", event.value);
-			localStorage.setItem("name", name.value);
-			localStorage.setItem("date", date.value);
-			localStorage.setItem("venue", venue.value);
-			localStorage.setItem("time", time.value);
-			localStorage.setItem("from", from.value);
-			localStorage.setItem("close", close.value);
-
-			title1.innerHTML = localStorage.getItem("title");
-			event1.innerHTML = "You are invited to " + localStorage.getItem("event") + " event";
-			name1.innerHTML = localStorage.getItem("name");
-			date1.innerHTML = "Date: " + localStorage.getItem("date");
-			venue1.innerHTML = "Venue: " + localStorage.getItem("venue");
-			time1.innerHTML = "Time: " + localStorage.getItem("time");
-			close1.innerHTML = localStorage.getItem("close");
-			from1.innerHTML = "From: " + localStorage.getItem("from");
-			
-}
+	document.getElementById("title1").innerHTML = document.getElementById("title").value;
+	document.getElementById("event1").innerHTML = document.getElementById("event").value;
+			document.getElementById("name1").innerHTML = document.getElementById("name").value;
+			document.getElementById("date1").innerHTML = "Date: " + document.getElementById("date").value;
+			document.getElementById("venue1").innerHTML = "Venue: " + document.getElementById("venue").value;
+			document.getElementById("time1").innerHTML = "Time: " + document.getElementById("time").value;
+			document.getElementById("close1").innerHTML = document.getElementById("close").value;
+			document.getElementById("sender1").innerHTML = "From: " + document.getElementById("sender").value;
+			document.getElementById("close1").innerHTML = document.getElementById("close").value;
+		}
+	
 function save(){
-			var title1 = document.getElementById("title1");
-			var event1 = document.getElementById("event1");
-			var name1 = document.getElementById("name1");
-			var date1 = document.getElementById("date1");
-			var venue1 = document.getElementById("venue1");
-			var time1 = document.getElementById("time1");
-			var from1 = document.getElementById("from1");
-			var close1 = document.getElementById("close1");
 
-			localStorage.setItem("title1", title1.value);
-			localStorage.setItem("event1", event1.value);
-			localStorage.setItem("name1", name1.value);
-			localStorage.setItem("date1", date1.value);
-			localStorage.setItem("venue1", venue1.value);
-			localStorage.setItem("time1", time1.value);
-			localStorage.setItem("from1", from1.value);
-			localStorage.setItem("close1", close1.value);
+			let z = document.getElementById("title").value;
+			let y = document.getElementById("event").value;
+			let b = document.getElementById("name").value;
+			let c = document.getElementById("date").value;
+			let d = document.getElementById("venue").value;
+			let e = document.getElementById("time").value;
+			let f = document.getElementById("from").value;
+			let g = document.getElementById("close").value;
+			
+			localStorage.setItem("greet", z);
+			localStorage.setItem("greet", y);
+			localStorage.setItem("name", b);
+			localStorage.setItem("date", c);
+			localStorage.setItem("venue", d);
+			localStorage.setItem("time", e);
+			localStorage.setItem("close", f);
+			localStorage.setItem("sender", g);
+
 }
 function load(){
-			var title = document.getElementById("title");
-			var event = document.getElementById("event");
-			var name = document.getElementById("name");
-			var date = document.getElementById("date");
-			var venue = document.getElementById("venue");
-			var time = document.getElementById("time");
-			var from = document.getElementById("from");
-			var close = document.getElementById("close");
 
-			title.innerHTML = localStorage.getItem("title1");
-			event.innerHTML = localStorage.getItem("event1");
-			name.innerHTML = localStorage.getItem("name1");
-			date.innerHTML = localStorage.getItem("date1");
-			venue.innerHTML = localStorage.getItem("venue1");
-			time.innerHTML = localStorage.getItem("time1");
-			from.innerHTML = localStorage.getItem("from1");
-			close.innerHTML = localStorage.getItem("close1");
+			document.getElementById("title").value = localStorage.getItem("title");
+			document.getElementById("event").value = localStorage.getItem("event");
+			document.getElementById("name").value = localStorage.getItem("name");
+			document.getElementById("date").value = localStorage.getItem("date");
+			document.getElementById("venue").value = localStorage.getItem("venue");
+			document.getElementById("time").value = localStorage.getItem("time");
+			document.getElementById("from").value = localStorage.getItem("from");
+			document.getElementById("close").value = localStorage.getItem("close");
+
 }
 function clearPreview(){
-			// save all as empty string to local storage
-			localStorage.setItem("title", "");
-			localStorage.setItem("event", "");
-			localStorage.setItem("name", "");
-			localStorage.setItem("date", "");
-			localStorage.setItem("venue", "");
-			localStorage.setItem("time", "");
-			localStorage.setItem("from", "");
-			localStorage.setItem("close", "");
 
-			// replace empty the input value into an empty string
 			document.getElementById("title").value = "";
 			document.getElementById("event").value = "";
 			document.getElementById("name").value = "";
@@ -242,15 +202,16 @@ function clearPreview(){
 			document.getElementById("from").value = "";
 			document.getElementById("close").value = "";
 
-			// lead empty string into the preview from local storage
-			title1.innerHTML = localStorage.getItem("title");
-			event1.innerHTML = localStorage.getItem("event");
-			name1.innerHTML = localStorage.getItem("name");
-			date1.innerHTML = localStorage.getItem("date");
-			venue1.innerHTML = localStorage.getItem("venue");
-			time1.innerHTML = localStorage.getItem("time");
-			close1.innerHTML = localStorage.getItem("from");
-			from1.innerHTML = localStorage.getItem("from");
+			document.getElementById("title1").innerHTML = "";
+			document.getElementById("event1").innerHTML = "";
+			document.getElementById("name1").innerHTML = "";
+			document.getElementById("date1").innerHTML = "";
+			document.getElementById("venue1").innerHTML = "";
+			document.getElementById("time1").innerHTML = "";
+			document.getElementById("from1").innerHTML = "";
+			document.getElementById("close1").innerHTML = "";
+
+			
 }
 function font(value){
 
