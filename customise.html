@@ -173,7 +173,7 @@ function preview(){
 			localStorage.setItem("close", close.value);
 
 			title1.innerHTML = localStorage.getItem("title");
-			event1.innerHTML = localStorage.getItem("event");
+			event1.innerHTML = "You are invited to " + localStorage.getItem("event") + " event";
 			name1.innerHTML = localStorage.getItem("name");
 			date1.innerHTML = "Date: " + localStorage.getItem("date");
 			venue1.innerHTML = "Venue: " + localStorage.getItem("venue");
