@@ -132,101 +132,60 @@ body{
 <script type="text/javascript">
 
 function preview(){
-	var title = document.getElementById("title");
-	var name = document.getElementById("name");
-	var greet = document.getElementById("greet");
-	var date = document.getElementById("date");
-	var time = document.getElementById("time");
-	var venue = document.getElementById("venue");
-	var close = document.getElementById("close");
-
-	localStorage.setItem("title", title.value);
-	localStorage.setItem("name", name.value);
-	localStorage.setItem("greet", greet.value);
-	localStorage.setItem("date", date.value);
-	localStorage.setItem("time", time.value);
-	localStorage.setItem("venue", venue.value);
-	localStorage.setItem("close", close.value);
-
-	var title1 = document.getElementById("title1");
-	var name1 = document.getElementById("name1");
-	var greet1 = document.getElementById("greet1");
-	var date1 = document.getElementById("date1");
-	var time1 = document.getElementById("time1");
-	var venue1 = document.getElementById("venue1");
-	var close1 = document.getElementById("close1");
-
-			// title1.innerHTML = "Dear, " + localStorage.getItem("title");
-	name1.innerHTML = "Dear, " + localStorage.getItem("title") + " " +localStorage.getItem("name");
-	greet1.innerHTML = localStorage.getItem("greet") + "\n , You are invited to our fundraiser celebration event";
-	date1.innerHTML = "Date: " + localStorage.getItem("date");
-	time1.innerHTML = "Time: " + localStorage.getItem("time");
-	venue1.innerHTML = "Venue: " + localStorage.getItem("venue");
-	close1.innerHTML = localStorage.getItem("close");
+	document.getElementById("name1").innerHTML = document.getElementById("title").value + " " + document.getElementById("name").value;
+	document.getElementById("greet1").innerHTML = document.getElementById("greet").value;
+	document.getElementById("date1").innerHTML = "Date: " + document.getElementById("date").value;
+	document.getElementById("time1").innerHTML = "Time: " + document.getElementById("time").value;
+	document.getElementById("venue1").innerHTML = "Venue: " + document.getElementById("venue").value;
+	document.getElementById("close1").innerHTML = document.getElementById("close").value;
 }
 function save(){
 
-	var title1 = document.getElementById("title1");
-	var name1 = document.getElementById("name1");
-	var greet1 = document.getElementById("greet1");
-	var date1 = document.getElementById("date1");
-	var time1 = document.getElementById("time1");
-	var venue1 = document.getElementById("venue1");
-	var close1 = document.getElementById("close1");
+	let g = document.getElementById("title").value;
+	let b = document.getElementById("name").value;
+	let a = document.getElementById("greet").value;
+	let c = document.getElementById("date").value;
+	let e = document.getElementById("time").value;
+	let d = document.getElementById("venue").value;
+	let f = document.getElementById("close").value;
 
-	localStorage.setItem("title1", title1.value);
-	localStorage.setItem("name1", name1.value);
-	localStorage.setItem("greet1", greet1.value);
-	localStorage.setItem("date1", date1.value);
-	localStorage.setItem("time1", time1.value);
-	localStorage.setItem("venue1", venue1.value);
-	localStorage.setItem("close1", close1.value);
+	localStorage.setItem("title", g);
+	localStorage.setItem("name", b);
+	localStorage.setItem("greet", a);
+	localStorage.setItem("date", c);
+	localStorage.setItem("time", e);
+	localStorage.setItem("venue", d);
+	localStorage.setItem("close", f);
 }
-function clearPreview(){
-			// save all as empty string to local storage
-			localStorage.setItem("title", "");
-			localStorage.setItem("name", "");
-			localStorage.setItem("greet", "");
-			localStorage.setItem("date", "");
-			localStorage.setItem("time", "");
-			localStorage.setItem("venue", "");
-			localStorage.setItem("close", "");
-
-			// replace empty the input value into an empty string
-			document.getElementById("title").value = "";
-			document.getElementById("name").value = "";
-			document.getElementById("greet").value = "";
-			document.getElementById("date").value = "";
-			document.getElementById("time").value = "";
-			document.getElementById("venue").value = "";
-			document.getElementById("close").value = "";
-
-			// put empty string into ihe preview from local storage
-			name1.innerHTML = localStorage.getItem("name");
-			greet1.innerHTML = localStorage.getItem("greet");
-			date1.innerHTML = localStorage.getItem("date");
-			time1.innerHTML = localStorage.getItem("time");
-			venue1.innerHTML = localStorage.getItem("venue");
-			close1.innerHTML = localStorage.getItem("close");
-		}
 function load(){
 
-	var title = document.getElementById("title");
-	var name = document.getElementById("name");
-	var greet = document.getElementById("greet");
-	var date = document.getElementById("date");
-	var time = document.getElementById("time");
-	var venue = document.getElementById("venue");
-	var close = document.getElementById("close");
-
-	title.innerHTML = localStorage.getItem("title1");
-	name.innerHTML = localStorage.getItem("name1");
-	greet.innerHTML = localStorage.getItem("greet1");
-	date.innerHTML = localStorage.getItem("date1");
-	time.innerHTML = localStorage.getItem("time1");
-	venue.innerHTML = localStorage.getItem("venue1");
-	close.innerHTML = localStorage.getItem("close1");
+	document.getElementById("title").value = localStorage.getItem("title");
+	document.getElementById("name").value = localStorage.getItem("name");
+	document.getElementById("greet").value = localStorage.getItem("greet");
+	document.getElementById("date").value = localStorage.getItem("date");
+	document.getElementById("time").value = localStorage.getItem("time");
+	document.getElementById("venue").value = localStorage.getItem("venue");
+	document.getElementById("close").value = localStorage.getItem("close");
 }
+function clearPreview(){
+
+	document.getElementById("title").value = "";
+	document.getElementById("name").value = "";
+	document.getElementById("greet").value = "";
+	document.getElementById("date").value = "";
+	document.getElementById("time").value = "";
+	document.getElementById("venue").value = "";
+	document.getElementById("close").value = "";
+
+	// document.getElementById("title1").innerHTML = "";
+	document.getElementById("name1").innerHTML = "";
+	document.getElementById("greet1").innerHTML = "";
+	document.getElementById("date1").innerHTML = "";
+	document.getElementById("time1").innerHTML = "";
+	document.getElementById("venue1").innerHTML = "";
+	document.getElementById("close1").innerHTML = "";
+}
+
 function font(value){
 
 			var out = document.getElementById("content")
@@ -310,6 +269,7 @@ function popup() {
 		<br> <br> <br> <br>
 		<br><p id="name1" contenteditable="true"></p>
 		<br><p id="greet1" contenteditable="true"></p>
+		<p id="bawah" contenteditable="true"> You are invited to fundraiser celebration event </p>
 		<br><p id="date1" contenteditable="true"></p>
 		<p id="time1" contenteditable="true"></p>
 		<p id="venue1" contenteditable="true"></p>
