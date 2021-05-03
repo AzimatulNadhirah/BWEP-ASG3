@@ -13,6 +13,14 @@
 			font-family: Times New Roman;
 			background-color: #4d88ff;
 		}
+
+		#content {
+			height: 700px;
+			width: 600px;
+			background-repeat: no-repeat;
+			margin-top: -20px;
+
+		}
 		#header {
 			width: 100%;
 			height: 100px;
@@ -89,6 +97,8 @@
 				margin-left: 0;
 				margin-right: auto;
 			}
+
+
 }
 	</style>
 
@@ -270,12 +280,12 @@ function bgimg(value){
 	var content = document.getElementById("content");
 	if (value == 0) {
 	content.style.backgroundImage= "";
-	content.style.backgroundSize= "600px 600px"
+	content.style.backgroundSize= "600px 700px"
 
 	}
 	else if (value == 1) {
 	content.style.backgroundImage= "url(images/bg-1.jpg)";
-	content.style.backgroundSize= "600px 600px"
+	content.style.backgroundSize= "600px 700px"
 
 	}
 	else if (value == 2) {
@@ -325,7 +335,7 @@ function bgimg(value){
 <div id="main"> <!--grid starts here-->
 
 	<div class="one">
-		<h3>Drag the text to the input box</h3>
+		<h3>Drag the text to the input text box</h3>
 
 		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
 			<table align="center">
